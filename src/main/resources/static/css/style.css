@@ -1,0 +1,126 @@
+.stamp {
+    width: 100.8%;
+    height: auto;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.stamp:before {
+    content: '';
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    z-index: -1;
+}
+.stamp:after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+    z-index: -2;
+}
+
+/* 斜块 */
+.stamp i{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    height: 100px;
+    width: 150%;
+    background-color: rgba(255,255,255,.15);
+    transform: rotate(-30deg);
+}
+/* 主券 */
+.stamp .par{
+    float: left;
+    padding: 0 10px;
+    width: 70%;
+    border-right: 2px dashed rgba(255,255,255,.3); /* 右侧波浪边 */
+    text-align: left;
+}
+.stamp .par header{
+    font-size: 20px;
+    color:#fff;
+    line-height: 35px;
+}
+.stamp .par p{
+    color:#fff;
+    margin-bottom: 3px;
+    font-size: 15px;
+    line-height: 15px;
+}
+.stamp .par sub{
+    color:#fff;
+    margin-bottom: 3px;
+    font-size: 10px;
+    line-height: 5px;
+    bottom: auto;
+}
+/* 副券 */
+.stamp .copy{
+    display: inline-block;
+    padding: 5px 0;
+    width:auto;
+    vertical-align: text-bottom;
+    color:rgb(255,255,255);
+    text-align: center;
+    line-height: initial;
+}
+.stamp .copy header{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 14px;
+}
+.stamp .copy p{
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.stamp-orange {
+    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 2px, #F39B00 2px);
+    background-size: 10px 10px;
+    background-position: 9px 3px;
+}
+/* 圆形波点背景，用于左右撕扯边 */
+.stamp-orange:before{
+    background-color:#F39B00;
+}
+
+.stamp-red {
+    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 2px, #D24161 2px);
+    background-size: 10px 10px;
+    background-position: 9px 3px;
+}
+.stamp-red:before{
+    background-color:#D24161;
+}
+.stamp-green {
+    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 2px, #7EAB1E 2px);
+    background-size: 10px 10px;
+    background-position: 9px 3px;
+}
+.stamp-green:before{
+    background-color:#7EAB1E;
+}
+.stamp-blue {
+    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 2px, #50ADD3 2px);
+    background-size: 10px 10px;
+    background-position: 9px 3px;
+}
+.stamp-blue:before{
+    background-color:#50ADD3;
+}
+.stamp-disabled {
+    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 5px, #d2cdc6 5px);
+    background-size: 15px 15px;
+    background-position: 9px 3px;
+}
+.stamp-disabled:before{
+    background-color:#d2cdc6;
+}

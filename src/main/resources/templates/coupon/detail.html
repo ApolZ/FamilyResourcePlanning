@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>家庭资源管理系统</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container-fluid">
+    <!-- /* Header */ -->
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="page-header">
+                <h1>
+                    <p>家庭资源管理系统</p>
+                    <small>新增兑换券</small>
+                </h1>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <!-- Body -->
+    <div class="row">
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <div class="list-group">
+
+                <div class="list-group-item active">
+                    <h5 class="list-group-item-heading">
+                        Code
+                    </h5>
+                </div>
+                <div class="list-group-item">
+                    <input type="text" class="form-control" id="meta-code" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2"></div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-primary" id="save">
+                提交
+            </button>
+        </div>
+
+        <div class="col-md-2"></div>
+
+    </div>
+</div>
+
+<!--/* Modal-Message */-->
+<div class="modal fade" id="modal-message" tabindex="10" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" id="modal-message-header">
+                Message
+            </div>
+            <div class="modal-body" id="modal-message-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="jump-main">确定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/common/jquery.min.js" ></script>
+<script src="/js/common/bootstrap.min.js" ></script>
+<script src="/js/item.js" ></script>
+</body>
+</html>
