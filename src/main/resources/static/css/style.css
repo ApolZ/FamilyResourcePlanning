@@ -29,12 +29,12 @@
 /* 斜块 */
 .stamp i{
     position: absolute;
-    left: 0;
+    left: -130px;
     top: 20px;
     height: 100px;
     width: 150%;
     background-color: rgba(255,255,255,.15);
-    transform: rotate(-30deg);
+    transform: rotate(-45deg);
 }
 /* 主券 */
 .stamp .par{

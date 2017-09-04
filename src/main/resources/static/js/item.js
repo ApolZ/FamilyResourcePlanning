@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
-    $(".check").click(function () {
-        $("#modal-message-header").html("核销成功");
+    $(".copy").click(function () {
+
+        var id = this.title;
+        $("#modal-message-header").html("核销成功:");
+        $("#modal-message-body").html("券号：" + id);
         $("#modal-message").modal('show');
     //     var code = $("#meta-code").val();
     //     if (!code || code.indexOf(" ") != -1 ) {
@@ -36,4 +39,12 @@ $(document).ready(function() {
     //     return false;
     });
 
+    // $(".copy").click(function(){
+    //     $("#modal-message-header").html("核销成功");
+    //     $("#modal-message").modal('show');
+    //     // $(this).click(function(){
+    //         var id = $(this).title;
+    //         alert(id);
+    //     // })
+    // });
 });
