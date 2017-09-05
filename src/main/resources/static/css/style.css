@@ -117,8 +117,8 @@
     background-color:#50ADD3;
 }
 .stamp-disabled {
-    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 5px, #d2cdc6 5px);
-    background-size: 15px 15px;
+    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 2px, #d2cdc6 2px);
+    background-size: 10px 10px;
     background-position: 9px 3px;
 }
 .stamp-disabled:before{

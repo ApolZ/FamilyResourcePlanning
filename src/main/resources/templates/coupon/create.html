@@ -32,14 +32,37 @@
 
         <div class="col-md-8">
             <div class="list-group">
-
                 <div class="list-group-item active">
-                    <h5 class="list-group-item-heading">
-                        Code
-                    </h5>
+                    <h5 class="list-group-item-heading">兑换券名称</h5>
                 </div>
                 <div class="list-group-item">
-                    <input type="text" class="form-control" id="meta-code" />
+                    <input type="text" class="form-control" id="coupon-name" />
+                </div>
+                <div class="list-group-item active">
+                    <h5 class="list-group-item-heading">兑换券介绍</h5>
+                </div>
+                <div class="list-group-item">
+                    <input type="text" class="form-control" id="coupon-description" />
+                </div>
+                <div class="list-group-item active">
+                    <h5 class="list-group-item-heading">兑换券类型</h5>
+                </div>
+                <div class="list-group-item">
+                    <select id="coupon-type" class="form-control">
+                        <option value ="1">饮食兑换券</option>
+                        <option value ="2">服务兑换券</option>
+                        <option value ="3">豁免兑换券</option>
+                        <option value ="4">购物兑换券</option>
+                    </select>
+                </div>
+                <div class="list-group-item active">
+                    <h5 class="list-group-item-heading">拥有者</h5>
+                </div>
+                <div class="list-group-item">
+                    <select id="coupon-owner" class="form-control">
+                        <option value ="0">小猪</option>
+                        <option value ="1">大野猪</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -73,15 +96,15 @@
             <div class="modal-body" id="modal-message-body">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" id="jump-main">确定
-                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="view-0">查看大野猪的券</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="view-1">查看小猪的券</button>
             </div>
         </div>
     </div>
 </div>
 
-<script src="/js/common/jquery.min.js" ></script>
-<script src="/js/common/bootstrap.min.js" ></script>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="/js/item.js" ></script>
 </body>
 </html>

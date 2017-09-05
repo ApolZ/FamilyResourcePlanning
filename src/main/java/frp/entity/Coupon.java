@@ -1,5 +1,6 @@
 package frp.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
@@ -15,6 +16,7 @@ import java.util.Date;
 @Table(name = "t_coupon")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Coupon {
     @Id
     @GeneratedValue

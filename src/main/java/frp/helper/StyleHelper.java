@@ -24,4 +24,14 @@ public class StyleHelper {
         }
     }
 
+    public static String ownerNameById(Integer ownerId) {
+        switch (ownerId) {
+            default:
+            case 1:
+                return "大野猪";
+            case 0:
+                return "小猪";
+        }
+    }
+
 }

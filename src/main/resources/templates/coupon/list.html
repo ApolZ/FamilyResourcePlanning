@@ -19,8 +19,20 @@
             <div class="page-header">
                 <h1>
                     <p>家庭资源管理系统</p>
-                    <small>大野猪的券</small>
+                    <small th:text="${subTitle}"></small>
                 </h1>
+                <a href="/">
+                    <button type="button" class="btn btn-warning">查看所有的券</button>
+                </a>
+                <a href="/1/">
+                    <button type="button" class="btn btn-primary">大野猪的券</button>
+                </a>
+                <a href="/0/">
+                    <button type="button" class="btn btn-primary">小猪的券</button>
+                </a>
+                <a href="/create/">
+                    <button type="button" class="btn btn-danger">新增兑换券</button>
+                </a>
             </div>
         </div>
         <div class="col-md-2"></div>
@@ -38,7 +50,7 @@
                     <div class="par">
                         <header th:text="${each.name}"></header>
                         <p th:text="${each.description}"></p>
-                        <p style="line-height: 8px;"><sub>拥有者：大野猪</sub></p>
+                        <p style="line-height: 8px;"><sub th:text="'拥有者：' + ${T(frp.helper.StyleHelper).ownerNameById(each.ownerId)}"></sub></p>
                         <p style="line-height: 8px;"><sub th:text="'发放时间：' + ${each.createdDate}"></sub></p>
                         <div style="height: 5px"></div>
                     </div>
@@ -66,8 +78,7 @@
                 <div class="modal-body" id="modal-message-body">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="refresh">确定
-                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="refresh">确定</button>
                 </div>
             </div>
         </div>

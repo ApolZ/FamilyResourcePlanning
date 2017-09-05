@@ -18,4 +18,6 @@ public interface CouponRepo extends CrudRepository<Coupon, Integer> {
     @Query(value = "select coupon from Coupon coupon")
     List<Coupon> list();
 
+    @Query(value = "select coupon from Coupon coupon where coupon.ownerId = ?1")
+    List<Coupon> findByOwnerId(Integer ownerId);
 }
