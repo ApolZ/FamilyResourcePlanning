@@ -25,9 +25,4 @@ public class CouponController {
         return "coupon/list";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String detail(Model model, Coupon coupon) {
-        model.addAttribute("list",couponRepo.save(coupon));
-        return "coupon/detail";
-    }
 }
