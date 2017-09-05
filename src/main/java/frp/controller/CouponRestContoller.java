@@ -39,4 +39,19 @@ public class CouponRestContoller {
         couponRepo.save(input);
         return new ModalResponse("新增成功", StyleHelper.ownerNameById(input.getOwnerId())+"获得了一张崭新的《"+ input.getName()+ "》！", 200);
     }
+
+    @RequestMapping(value = "/coupon/createAs/", method = RequestMethod.POST)
+    public ModalResponse createAs(@RequestBody Coupon input) {
+        Integer inputId = input.getId();
+        Coupon oldCoupon = couponRepo.findOne(inputId);
+        Coupon newCoupon = new Coupon();
+        newCoupon.setCreatedDate(new Date());
+        newCoupon.setState(1);
+        newCoupon.setName(oldCoupon.getName());
+        newCoupon.setDescription(oldCoupon.getDescription());
+        newCoupon.setOwnerId(oldCoupon.getOwnerId());
+        newCoupon.setType(oldCoupon.getType());
+        couponRepo.save(newCoupon);
+        return new ModalResponse("耶！再来一张！", StyleHelper.ownerNameById(oldCoupon.getOwnerId())+"又获得了一张新的《"+ oldCoupon.getName()+ "》！", 200);
+    }
 }

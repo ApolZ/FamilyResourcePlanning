@@ -54,8 +54,8 @@
                         <p style="line-height: 8px;"><sub th:text="'发放时间：' + ${each.createdDate}"></sub></p>
                         <div style="height: 5px"></div>
                     </div>
-                    <div class="copy" th:title="${each.id}">
-                        <header th:text="${each.state==1 ? '立即使用' : '已经使用'}"></header>
+                    <div class="copy" th:title="${each.id}" th:attrappend="data-coupon-state=${each.state}, data-coupon-id=${each.id}">
+                        <header th:text="${each.state==1 ? '立即使用' : '再来一张'}"></header>
                         <p th:text="${each.state==1 ? '状态：可用' : '状态：已使用'}"></p>
                     </div>
                     <i></i>

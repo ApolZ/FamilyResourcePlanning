@@ -1,20 +1,37 @@
 $(document).ready(function() {
 
     $(".copy").click(function () {
-        var id = this.title;
+        var state = this.getAttribute("data-coupon-state");
+        var id = this.getAttribute("data-coupon-id");
         var param = {};
         param.id = id;
-        $.ajax({
-            method: "POST",
-            url: "/coupon/use/",
-            data: JSON.stringify(param),
-            contentType : 'application/json'
-        }).done(function (response) {
-            console.log(response);
-            $("#modal-message-header").html(response["title"]);
-            $("#modal-message-body").html(response["body"]);
-            $("#modal-message").modal('show');
-        });
+        if (state && "0"===state) {
+            //已使用，再来一张
+            $.ajax({
+                method: "POST",
+                url: "/coupon/createAs/",
+                data: JSON.stringify(param),
+                contentType : 'application/json'
+            }).done(function (response) {
+                console.log(response);
+                $("#modal-message-header").html(response["title"]);
+                $("#modal-message-body").html(response["body"]);
+                $("#modal-message").modal('show');
+            });
+        } else {
+            //未使用，立即核销
+            $.ajax({
+                method: "POST",
+                url: "/coupon/use/",
+                data: JSON.stringify(param),
+                contentType : 'application/json'
+            }).done(function (response) {
+                console.log(response);
+                $("#modal-message-header").html(response["title"]);
+                $("#modal-message-body").html(response["body"]);
+                $("#modal-message").modal('show');
+            });
+        }
         return false;
     });
 
