@@ -13,30 +13,7 @@
 
 <div class="container-fluid">
     <!-- /* Header */ -->
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="page-header">
-                <h1>
-                    <p>家庭资源管理系统</p>
-                    <small th:text="${subTitle}"></small>
-                </h1>
-                <a href="/">
-                    <button type="button" class="btn btn-warning">查看所有的券</button>
-                </a>
-                <a href="/1/">
-                    <button type="button" class="btn btn-primary">大野猪的券</button>
-                </a>
-                <a href="/0/">
-                    <button type="button" class="btn btn-primary">小猪的券</button>
-                </a>
-                <a href="/create/">
-                    <button type="button" class="btn btn-danger">新增兑换券</button>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
+    <div th:replace="coupon/header::header(${subTitle})"></div>
 
     <!-- /* Body */ -->
     <div class="row">

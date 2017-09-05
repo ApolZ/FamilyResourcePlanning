@@ -34,7 +34,8 @@ public class CouponController {
     }
 
     @RequestMapping("/create")
-    public String create() {
+    public String create(Model model) {
+        model.addAttribute("subTitle", "新增兑换券");
         return "coupon/create";
     }
 }
