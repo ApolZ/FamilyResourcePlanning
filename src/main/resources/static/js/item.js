@@ -11,8 +11,8 @@ $(document).ready(function() {
             contentType : 'application/json'
         }).done(function (response) {
             console.log(response);
-            $("#modal-message-header").html("核销成功:");
-            $("#modal-message-body").html("券号：" + id);
+            $("#modal-message-header").html(response["title"]);
+            $("#modal-message-body").html(response["body"]);
             $("#modal-message").modal('show');
         });
         return false;
@@ -32,26 +32,10 @@ $(document).ready(function() {
             contentType : 'application/json'
         }).done(function (response) {
             console.log(response);
-            $("#modal-message-header").html("新增成功");
-            $("#modal-message-body").html("券号：" + id);
+            $("#modal-message-header").html(response["title"]);
+            $("#modal-message-body").html(response["body"]);
             $("#modal-message").modal('show');
         });
-        return false;
-    });
-
-    /**
-     * 模态框按键定义
-     */
-    $("#refresh").click(function(){
-        window.location.reload();
-        return false;
-    });
-    $("#view-0").click(function(){
-        window.location = "/0/";
-        return false;
-    });
-    $("#view-1").click(function(){
-        window.location = "/1/";
         return false;
     });
 });
