@@ -17,7 +17,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Coupon {
+public class Coupon implements Comparable<Coupon> {
     @Id
     @GeneratedValue
     private Integer id;
@@ -38,4 +38,8 @@ public class Coupon {
 
     @Column(name = "owner_id")
     private Integer ownerId;
+
+    public int compareTo (Coupon other) {
+        return this.createdDate.compareTo(other.getCreatedDate());
+    }
 }

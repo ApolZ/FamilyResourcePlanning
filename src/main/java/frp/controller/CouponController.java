@@ -1,5 +1,6 @@
 package frp.controller;
 
+import frp.entity.Coupon;
 import frp.helper.StyleHelper;
 import frp.respository.CouponRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 /**
  * @author ZhuHanxi
@@ -21,7 +24,11 @@ public class CouponController {
 
     @RequestMapping("/")
     public String list(Model model) {
-        model.addAttribute("list",couponRepo.list());
+        List<Coupon> couponList = couponRepo.list();
+        couponList.sort((a,b) ->
+            -(a.getCreatedDate().compareTo(b.getCreatedDate()))
+        );
+        model.addAttribute("list",couponList);
         model.addAttribute("subTitle","查看所有的券");
         return "coupon/list";
     }
